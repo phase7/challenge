@@ -13,7 +13,7 @@ class Solution:
             shift = 1 if direction else -1
             rep[start:end+1] += shift
 
-        return "".join(shifted_char(c, shift) for c, shift in zip(s, rep))
+        return "".join(tuple(shifted_char(c, shift) for c, shift in tuple(zip(s, rep))))
 
 if __name__ == "__main__":
     assert Solution().shiftingLetters(s = "abc", shifts = [[0,1,0],[1,2,1],[0,2,1]]) == "ace", Solution().shiftingLetters(s = "abc", shifts = [[0,1,0],[1,2,1],[0,2,1]])
